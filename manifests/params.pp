@@ -1,4 +1,5 @@
 class slurm::params {
+  $version = '15.08.11-1'
   $common_pkgs = ['slurm','slurm-devel','slurm-munge','slurm-perlapi','slurm-plugins','slurm-sjobexit','slurm-sjstat','slurm-torque']
   $master_pkgs = []
   $client_pkgs = []
@@ -9,4 +10,5 @@ class slurm::params {
   $submit = false
   $user = 'slurm'
   $group = 'slurm'
+  $pam = true
 }
