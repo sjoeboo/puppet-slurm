@@ -4,7 +4,7 @@ class slurm::common (
   ) {
     #All slurm systems need these packages installed
 
-    $common_pkgs.each do |$pkg| {
+    $common_pkgs.each |String $pkg| {
       package {$pkg:
         ensure => $version,
       }
