@@ -21,6 +21,14 @@ class slurm::common (
         mode    => '0644',
       }
     }
+
+    if $link_configdir == true {
+      file { '/etc/slurm':
+        ensure => link,
+        force  => true,
+        target => $link_target,
+      }
+    }
     #We do NOT start the service here.
     #Somethings might want the packages, but not to RUN slurm.
   }

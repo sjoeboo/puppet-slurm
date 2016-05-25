@@ -11,8 +11,8 @@ class slurm::params {
   $user = 'slurm'
   $pam = true
 
-  $link_configdir = true
-  $link_target = '/slurm/'
+  $link_configdir = false
+  $link_target = undef
 
   $sysconfig_lines = []
 
