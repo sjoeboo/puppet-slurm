@@ -11,7 +11,7 @@ class slurm (
   String $user            = $::slurm::params::user,
   Boolean $pam            = $::slurm::params::pam,
   Boolean $link_configdir = $::slurm::params::link_configdir,
-  Optional String $link_target     = $::slurm::params::link_target,
+  Optional[String] $link_target     = $::slurm::params::link_target,
   Array $sysconfig_lines  = $::slurm::params::sysconfig_lines,
   ) inherits slurm::params {
 
