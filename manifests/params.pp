@@ -10,4 +10,10 @@ class slurm::params {
   $submit = false
   $user = 'slurm'
   $pam = true
+
+  $link_configdir = true
+  $link_target = '/slurm/'
+
+  $sysconfig_lines = []
+
 }
