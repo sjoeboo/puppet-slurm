@@ -13,12 +13,13 @@ class slurm::common (
       }
     }
 
-    if $sysconfig_lines != []
-    file {'/etc/sysconfig/slurm':
-      content => template('slurm/sysconfig_slurm.erb'),
-      owner   => root,
-      group   => root,
-      mode    => '0644',
+    if $sysconfig_lines != [] {
+      file {'/etc/sysconfig/slurm':
+        content => template('slurm/sysconfig_slurm.erb'),
+        owner   => root,
+        group   => root,
+        mode    => '0644',
+      }
     }
     #We do NOT start the service here.
     #Somethings might want the packages, but not to RUN slurm.
