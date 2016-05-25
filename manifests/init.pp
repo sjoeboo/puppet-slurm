@@ -9,7 +9,6 @@ class slurm (
   Boolean $db        = $::slurm::params::db,
   Boolean $submit    = $::slurm::params::submit,
   String $user       = $::slurm::params::user,
-  String $group      = $::slurm::params::group,
   Boolean $pam       = $::slurm::params::pam,
   ) inherits slurm::params {
 

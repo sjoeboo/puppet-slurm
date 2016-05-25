@@ -9,6 +9,5 @@ class slurm::params {
   $db = false
   $submit = false
   $user = 'slurm'
-  $group = 'slurm'
   $pam = true
 }
