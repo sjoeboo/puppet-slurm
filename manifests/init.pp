@@ -8,6 +8,7 @@ class slurm (
   Boolean $master         = $::slurm::params::master,
   Boolean $db             = $::slurm::params::db,
   Boolean $submit         = $::slurm::params::submit,
+  Boolnea $common         = $::slurm::params::common,
   String $user            = $::slurm::params::user,
   Boolean $pam            = $::slurm::params::pam,
   Boolean $link_configdir = $::slurm::params::link_configdir,
@@ -16,8 +17,21 @@ class slurm (
   ) inherits slurm::params {
 
     #All slurm things need commmon/shared user
-    class { '::slurm::common': } ->
-    class { '::slurm::user': }
+    if $common == true {
+      class { '::slurm::common': } ->
+      class { '::slurm::user': }
+    }
+    if $client == true {
 
+    }
+    if $master == true {
+
+    }
+    if $submit == true {
+
+    }
+    if $db == true {
+      
+    }
 
 }

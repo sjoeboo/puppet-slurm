@@ -8,6 +8,7 @@ class slurm::params {
   $master = false
   $db = false
   $submit = false
+  $common = true
   $user = 'slurm'
   $pam = true
 
