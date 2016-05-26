@@ -21,17 +21,16 @@ class slurm (
       class { '::slurm::common': } ->
       class { '::slurm::user': }
     }
-    if $client == true {
-      class {'::slurm::client': }
-    }
-    if $master == true {
-      class {'::slurm::master': }
-    }
-    if $submit == true {
-      class {'::slurm::submit': }
-    }
-    if $db == true {
-      class {'::slurm::db': }
-    }
-
+    #if $client == true {
+    #  class {'::slurm::client': }
+    #}
+    #if $master == true {
+    #  class {'::slurm::master': }
+    #}
+    #if $submit == true {
+    #  class {'::slurm::submit': }
+    #}
+    #if $db == true {
+    #  class {'::slurm::db': }
+    #}
 }
