@@ -8,7 +8,7 @@ class slurm (
   Boolean $master         = $::slurm::params::master,
   Boolean $db             = $::slurm::params::db,
   Boolean $submit         = $::slurm::params::submit,
-  Boolnea $common         = $::slurm::params::common,
+  Boolean $common         = $::slurm::params::common,
   String $user            = $::slurm::params::user,
   Boolean $pam            = $::slurm::params::pam,
   Boolean $link_configdir = $::slurm::params::link_configdir,
