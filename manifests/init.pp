@@ -25,9 +25,11 @@ class slurm (
     #if $compute == true {
     #  class {'::slurm::compute': }
     #}
-    #if $master == true {
-    #  class {'::slurm::master': }
-    #}
+    if $master == true {
+      class {'::slurm::master':
+        require => [Class['::slurm::common'],Class['::slurm::user']],
+      }
+    }
     #if $submit == true {
     #  class {'::slurm::submit': }
     #}
