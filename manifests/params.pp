@@ -11,6 +11,7 @@ class slurm::params {
   $common = true
   $user = 'slurm'
   $pam = true
+  $spool_dir = '/var/spool/slurm'
 
   $link_configdir = false
   $link_target = undef

@@ -11,6 +11,7 @@ class slurm (
   Boolean $common         = $::slurm::params::common,
   String $user            = $::slurm::params::user,
   Boolean $pam            = $::slurm::params::pam,
+  String $spool_dir       = $::slurm::params::spool_dir,
   Boolean $link_configdir = $::slurm::params::link_configdir,
   Optional[String] $link_target     = $::slurm::params::link_target,
   Array $sysconfig_lines  = $::slurm::params::sysconfig_lines,
