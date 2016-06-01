@@ -4,7 +4,7 @@ class slurm::params {
   $master_pkgs = []
   $compute_pkgs = []
   $db_pkgs = ['slurm-slurmdbd']
-  $client = true
+  $compute = true
   $master = false
   $db = false
   $submit = false

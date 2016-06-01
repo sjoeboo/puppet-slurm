@@ -2,9 +2,9 @@ class slurm (
   String $version         = $::slurm::params::version,
   Array $common_pkgs      = $::slurm::params::common_pkgs,
   Array $master_pkgs      = $::slurm::params::master_pkgs,
-  Array $compute_pkgs      =  $::slurm::params::compute_pkgs,
+  Array $compute_pkgs     =  $::slurm::params::compute_pkgs,
   Array $db_pkgs          = $::slurm::params::db_pkgs,
-  Boolean $client         = $::slurm::params::client,
+  Boolean $compute        = $::slurm::params::client,
   Boolean $master         = $::slurm::params::master,
   Boolean $db             = $::slurm::params::db,
   Boolean $submit         = $::slurm::params::submit,
@@ -22,9 +22,9 @@ class slurm (
       class { '::slurm::common': } ->
       class { '::slurm::user': }
     }
-    #if $compute == true {
-    #  class {'::slurm::compute': }
-    #}
+    if $compute == true {
+      class {'::slurm::compute': }
+    }
     if $master == true {
       class {'::slurm::master':
         require => [Class['::slurm::common'],Class['::slurm::user']],
